@@ -75,10 +75,6 @@ button:focus-visible {
   }
 }
 
-.App {
-  border: 1px solid red;
-}
-
 .task-form {
   display: flex;
   align-items: center;

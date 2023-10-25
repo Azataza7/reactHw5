@@ -23,9 +23,15 @@ function App() {
     }
   };
 
+  const deleteTask = (index: number) => {
+    const taskListCopy = [...taskList];
+    taskListCopy.splice(index, 1);
+    setTaskList(taskListCopy);
+  };
+
   const showTaskList = taskList.map((task, index) => {
     return (
-      <Task key={index} text={task.text} id={task.id}/>
+      <Task key={index} text={task.text} id={task.id} deleteTask={() => deleteTask(index)}/>
     );
   });
 
