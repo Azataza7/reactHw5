@@ -12,6 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  text-align: center;
+  margin-top: 20px;
 }
 
 a {
@@ -19,13 +21,14 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
   margin: 0;
-  display: flex;
+  display: block;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -47,9 +50,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -60,10 +65,57 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+}
+
+.App {
+  border: 1px solid red;
+}
+
+.task-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.task-form input {
+  flex-basis: 70%;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.task-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-block p {
+  font-size: 20px;
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+.doneBtn {
+  margin-right: 5px;
+}
+
+.doneBtn:hover {
+  background-color: green;
+}
+
+.deleteBtn:hover {
+  background-color: red;
+}
+
+.action-buttons {
+  margin-right: 10px;
 }
