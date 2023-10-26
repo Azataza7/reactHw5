@@ -104,6 +104,10 @@ button:focus-visible {
   margin-right: 5px;
 }
 
+.doneBtn.checked {
+  background-color: green;
+}
+
 .doneBtn:hover {
   background-color: green;
 }

@@ -4,10 +4,10 @@ import AddTaskForm from './AddTaskForm';
 
 function App() {
   const [taskList, setTaskList] = useState([
-    {id: '1', text: 'Buy milk'},
-    {id: '2', text: 'Walk with dog'},
-    {id: '3', text: 'Watch news'},
-    {id: '4', text: 'Read smth boring'},
+    {id: '1', text: 'Buy milk', done: false},
+    {id: '2', text: 'Walk with dog', done: false},
+    {id: '3', text: 'Watch news', done: false},
+    {id: '4', text: 'Read smth boring', done: false},
   ]);
 
   const addCurrentTask = (newTaskText) => {
@@ -16,6 +16,7 @@ function App() {
       const newTask = {
         id: `${Date.now()}`,
         text: newTaskText,
+        done: false,
       };
 
       taskListCopy.push(newTask);
@@ -29,9 +30,22 @@ function App() {
     setTaskList(taskListCopy);
   };
 
+  const toggleTaskDone = (taskId) => {
+    const taskListCopy = taskList.map((task) => {
+      if (task.id === taskId) {
+        return {...task, done: !task.done};
+      }
+      return task;
+    });
+
+    setTaskList(taskListCopy);
+  };
+
   const showTaskList = taskList.map((task, index) => {
     return (
-      <Task key={index} text={task.text} id={task.id} deleteTask={() => deleteTask(index)}/>
+      <Task key={index} text={task.text} id={task.id} deleteTask={() => deleteTask(index)}
+            done={task.done} toggleTaskDone={() => toggleTaskDone(task.id)}
+      />
     );
   });
 
